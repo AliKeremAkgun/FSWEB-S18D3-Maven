@@ -1,9 +1,10 @@
 package com.workintech.sqlrelations.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -14,12 +15,16 @@ public class Surgery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nurse_id")
-    private long nurseId;
+    private String room;
+    private String floor;
 
+    // Hata veren eksik alanlar:
     @Column(name = "patient_id")
     private long patientId;
 
     @Column(name = "doctor_id")
     private long doctorId;
+
+    @Column(name = "nurse_id")
+    private long nurseId;
 }
